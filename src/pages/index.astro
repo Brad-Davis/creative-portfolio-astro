@@ -1,11 +1,27 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Logo from '../components/Logo.astro';
+import Navbar from '../components/Navbar.astro';
+import LightSwitch from '../components/LightSwitch.astro';
+import Projects from '../components/Projects.astro';
+import Music from '../components/Music.astro';
+import About from '../components/About.astro';
 ---
 
 <Layout>
-	<Welcome />
+    <div class="App">
+        <div class="flexyyy">
+            <Logo client:load />
+            <Navbar />
+            <LightSwitch />
+        </div>
+        <div class="container">
+            <h1 class="phoneShrink" style="text-align: left; max-width: 1300px;">
+                Brad Davis is a creative technologist and music producer based in Brooklyn. His work in web and music aims to close the gap the internet has created.
+            </h1>
+            <Projects />
+            <Music />
+            <About />
+        </div>
+    </div>
 </Layout>

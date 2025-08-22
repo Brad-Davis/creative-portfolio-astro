@@ -1,0 +1,229 @@
+---
+// Logo component with Three.js 3D CD
+---
+
+<div id="logo-container"></div>
+
+<style>
+    #logo-container {
+        width: 250px;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    #logo-container canvas {
+        border-radius: 50%;
+    }
+</style>
+
+
+<script >
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'
+import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js'
+import { TTFLoader } from 'three/examples/jsm/loaders/TTFLoader.js'
+
+export default class Sketch {
+
+
+	constructor(options){ 
+		this.container = options.domElement
+		this.width = this.container.offsetWidth
+		this.height = this.container.offsetHeight
+
+		this.camera = new THREE.PerspectiveCamera( 70, this.width / this.height, 0.01, 10 );
+		this.camera.position.z = 1;
+
+		this.scene = new THREE.Scene();
+
+		this.renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
+		this.renderer.setClearColor(0x000000, 0); // Set clear color to transparent
+		this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+		this.renderer.toneMappingExposure = 1;
+		this.renderer.outputColorSpace = THREE.SRGBColorSpace;
+		// this.renderer.setPixelRatio(window.devicePixelRatio)
+		this.renderer.setPixelRatio(2)
+
+		this.container.appendChild(this.renderer.domElement)
+		this.controls = new OrbitControls(this.camera, this.renderer.domElement )
+		this.controls.enableDamping = true;
+		this.controls.dampingFactor = 0.05;
+		this.controls.autoRotate = true; // We'll handle animation manually
+		this.controls.enableZoom = true;
+		this.controls.enableRotate = true;
+		this.controls.enablePan = false;
+		
+		// Animation properties
+		this.animationRadius = 2;
+		this.animationSpeed = 0.5;
+
+		this.time = 0
+		this.resize()
+		this.setupLighting()
+		this.addObjects()
+		this.render()
+
+		this.setupResize()
+    this.scene.rotation.y = Math.PI/8
+    this.scene.rotation.x = -Math.PI/16
+	}
+
+	resize(){
+		this.width = this.container.offsetWidth
+		this.height = this.container.offsetHeight
+		this.renderer.setSize( this.width, this.height )
+		this.camera.aspect = this.width/this.height
+		this.camera.updateProjectionMatrix()
+	}
+
+	setupResize(){
+		window.addEventListener('resize', this.resize.bind(this))
+	}
+
+	setupLighting(){
+		// Ambient light for overall illumination
+		const ambientLight = new THREE.AmbientLight(0x404040, 0.3);
+		this.scene.add(ambientLight);
+
+		// Main directional light (key light)
+		const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
+		directionalLight.position.set(5, 5, 5);
+		directionalLight.castShadow = true;
+		this.scene.add(directionalLight);
+
+		// Rim light for edge definition
+		const rimLight = new THREE.DirectionalLight(0x4444ff, 0.8);
+		rimLight.position.set(-3, 2, -3);
+		this.scene.add(rimLight);
+
+		// Point light for additional highlights
+		const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+		pointLight.position.set(2, 3, 2);
+		this.scene.add(pointLight);
+
+		// Environment light for reflections
+		const hemiLight = new THREE.HemisphereLight(0x87CEEB, 0x362d1d, 0.5);
+		this.scene.add(hemiLight);
+	}
+
+	addObjects(){
+		const loader = new GLTFLoader();
+    loader.load('/3D/CDV2.glb', (gltf) => {
+      const cd = gltf.scene;
+      
+      
+      // Enhance materials for better reflections
+      cd.traverse((child) => {
+        if (child.isMesh) {
+          if (child.material) {
+            // Make the material more reflective like a CD surface
+            child.material.metalness = 0.9;
+            child.material.roughness = 0.1;
+            child.material.envMapIntensity = 1.5;
+            
+            // Enable transparency if needed
+            if (child.material.transparent) {
+              child.material.opacity = 0.9;
+            }
+            
+            // Update material to respond to lighting
+            child.material.needsUpdate = true;
+          }
+        }
+      });
+      this.mesh = cd;
+      this.mesh.scale.set(0.25, 0.25, 0.25);
+      this.mesh.rotation.x = Math.PI/2
+      console.log(cd);
+      this.scene.add(cd);
+    });
+
+    const ttfLoader = new TTFLoader();
+    let textMesh;
+    let loadedModel;
+
+    const depth = 0.1,
+        size = 1,
+        curveSegments = 12,
+
+        bevelThickness = 0.06, // Reduce bevel thickness
+        bevelSize = 0.06; // Reduce bevel size
+    ttfLoader.load("fonts/ChakraPetch-Bold.ttf", (json) => {
+        const font = new FontLoader().parse(json);
+        console.log(font);
+        const textGeometryBCD = new TextGeometry('BCD', {
+            font: font,
+            size: size + 0.1,
+            depth: depth,
+            curveSegments: 32, // Increase the curveSegments for smoother curves
+            bevelThickness: bevelThickness,
+            bevelSize: bevelSize,
+            bevelEnabled: true,
+        });
+        textGeometryBCD.center();
+
+        const materialsBCD = [
+            new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 1, roughness: 0.2 }), // front
+            new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 1, roughness: 0.2 }) // side
+        ];
+        const textMeshBCD = new THREE.Mesh(textGeometryBCD, materialsBCD);
+        textMeshBCD.position.set(0, 0.7, 0.2); // Adjust position as needed
+
+        const textGeometryROM = new TextGeometry('ROM', {
+            font: font,
+            size: size,
+            depth: depth,
+            curveSegments: 32, // Increase the curveSegments for smoother curves
+            bevelThickness: bevelThickness,
+            bevelSize: bevelSize,
+            bevelEnabled: true
+        });
+        textGeometryROM.center();
+        const materialsROM = [
+            new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 1, roughness: 0.2 }), // front
+            new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 1, roughness: 0.2 }) // side
+        ];
+        const textMeshROM = new THREE.Mesh(textGeometryROM, materialsROM);
+        textMeshROM.position.set(0, -0.7, 0.2); // Adjust position as needed
+
+        textMesh = new THREE.Group();
+        textMesh.add(textMeshBCD);
+        textMesh.add(textMeshROM);
+        textMesh.scale.set(0.2, 0.2, 0.2);
+        textMesh.position.set(0, 0, 0.4);
+        this.scene.add(textMesh);
+    })
+  }
+
+	render(){
+		this.time += 0.05
+    if (this.mesh) {
+      console.log(this.mesh.rotation);
+      this.mesh.rotation.x += 0.01
+      this.mesh.rotation.y += 0.01
+    }
+
+    const x = Math.cos(this.time * this.animationSpeed) * this.animationRadius;
+		const z = Math.sin(this.time * this.animationSpeed) * this.animationRadius;
+		
+		// Smoothly interpolate camera position
+		this.scene.position.x += x * 0.00005;
+		this.scene.position.z += z * 0.00005;
+		this.scene.position.y = 0; // Keep slight elevation
+    
+
+		this.renderer.render( this.scene, this.camera );
+		// console.log(this.time)
+		requestAnimationFrame(this.render.bind(this))
+	}
+}
+
+new Sketch({
+	domElement: document.getElementById('logo-container')
+})
+</script>

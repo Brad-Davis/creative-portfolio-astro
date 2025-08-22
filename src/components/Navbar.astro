@@ -1,0 +1,41 @@
+---
+// Navbar component for navigation
+---
+
+<nav>
+    <ul>
+        <li>
+            <a href="#projects" data-section="projects">
+                Projects
+            </a>
+        </li>
+        <li>
+            <a href="#music" data-section="music">
+                Music
+            </a>
+        </li>
+        <li>
+            <a href="#about" data-section="about">
+                About
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    // Add smooth scrolling functionality
+    document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = document.querySelectorAll('nav a[data-section]');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = link.getAttribute('data-section');
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+</script>

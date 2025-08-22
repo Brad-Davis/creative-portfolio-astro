@@ -1,5 +1,5 @@
 {
-  "name": "former-filament",
+  "name": "brad-portfolio-astro",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.13.2"
+    "astro": "^5.13.2",
+    "three": "^0.173.0"
   }
 }

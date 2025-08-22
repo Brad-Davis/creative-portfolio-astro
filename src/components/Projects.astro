@@ -1,0 +1,463 @@
+---
+// Projects component
+const projects = [
+   { 
+    id: 0, 
+    title: 'Tribeca Immersive 2025', 
+    roleTitle: 'Technical Floor Manager',
+    links: [{link: 'https://tribecafilm.com/festival/immersive', text: 'Festival Guide'}, {link: 'https://www.onx.studio/onx-programming/tribeca-immersive-2025', text: 'ONX Guide'}, {link: 'https://agog.org/tribeca-immersive-2025/', text: 'Agog Guide'}, {link: 'https://www.cbsnews.com/news/2025-tribeca-festival-virtual-reality-augmented-reality-exhibitions/', text: 'CBS News Press'}],
+    techUsed: 'VR, XR, ',
+    description: 'An immersive installation surrounding the ancient art of tea leaf reading. Participants place down their tea cup where and are offers divine wisdom in return.', 
+    details: "This installation was presented at the Cha Cha Festival in New York City that celebrates tea and its rituals. Within the WSA building, the installation was designed to create a meditative space where participants could seek guidance through the ritual of tea leaf reading. My role involved composing the score for the installation, and working closely with head Artist Aaron Santiago. I utilized Tone.js for the audio synthesis and Socket.io to handle real-time communication between the installation's components. We used OpenAI's GPT model to provide dynamic and personalized responses based on the tea leaves' patterns. which allowed for a seamless blend of audio and visual elements, enhancing the overall experience.",
+    imageUrl: '/img/tribecaImmersive.webp',
+    gallery: [
+      {original: "/img/ml2.jpg"}, 
+      {original: "/img/ml1.jpg"}, 
+      {original: "/img/ml3.jpg"}, 
+      {original: "/img/ml4.jpg"},
+     ],
+  },
+  { 
+    id: 1, 
+    title: 'Morning Light', 
+    roleTitle: 'Creative Technologist/Score Composer',
+    links: [{link: 'https://www.instagram.com/chachafestival/?hl=en', text: 'Cha Cha Fest Instagram'}, {link: 'https://interiordesign.net/designwire/highlights-from-new-yorks-cha-cha-festival/#:~:text=Oolong%20Tea%20House%3A%20Morning%20Light%20by%20Aaron%20Santiago%20%26%20Michaela%20Ternasky%2DHolland&text=Michaela%20Ternasky%2DHolland-,Oolong%20Tea%20House.,-Visual%20artists%20Aaron', text: 'Press from Interior Design Magazine'}],
+    techUsed: 'Javascript, Tone.js, Socket.io, OpenAI GPT, Touchdesigner, Ableton',
+    description: 'An immersive installation surrounding the ancient art of tea leaf reading. Participants place down their tea cup where and are offers divine wisdom in return.', 
+    details: "This installation was presented at the Cha Cha Festival in New York City that celebrates tea and its rituals. Within the WSA building, the installation was designed to create a meditative space where participants could seek guidance through the ritual of tea leaf reading. My role involved composing the score for the installation, and working closely with head Artist Aaron Santiago. I utilized Tone.js for the audio synthesis and Socket.io to handle real-time communication between the installation's components. We used OpenAI's GPT model to provide dynamic and personalized responses based on the tea leaves' patterns. which allowed for a seamless blend of audio and visual elements, enhancing the overall experience.",
+    imageUrl: '/img/morningLight.jpg',
+    gallery: [
+      {original: "/img/ml2.jpg"}, 
+      {original: "/img/ml1.jpg"}, 
+      {original: "/img/ml3.jpg"}, 
+      {original: "/img/ml4.jpg"},
+     ],
+  },
+  { 
+    id: 2, 
+    title: 'Under The Radar: A Room of One\'s Own', 
+    roleTitle: 'Score Composer/Technical Director',
+    links: [{link: "https://utrfest.org/program/a-room-of-ones-own/", text: "Under The Radar Festival"}],
+    techUsed: 'Ableton, Touchdesigner, Live Mixing',
+    description: "A room of one's own is an XR performance and wholly unique experience about making creative work within a confined space.", 
+    details: "Through voice loops, motion capture, and audio-visual fragments in projected scenes, the unnamed protagonist takes us through their adolescence as they navigate sickness, immigration, and a multilingual artistic career. Reality and fiction bleed together in this playful and raw exploration of the joys and horrors of being trapped in one’s own creative brain.",
+    imageUrl: '/img/roomOfOnesOwn.jpg',
+    gallery: [
+      {original: "/img/room3.jpg"}, 
+      {original: "/img/room2.jpg"}, 
+      {original: "/img/room1.jpg"}, 
+      {original: "/img/room4.jpg"}],
+  },
+  { 
+    id: 3, 
+    title: 'Fras Fest', 
+    roleTitle: 'Head Organizer/Performer',
+    techUsed: 'Ableton, Lighting Design, Live Mixing',
+    description: "A music festival showcasing amazing artists from across the northeastern music scene working alongside technical artists to create a wholly unique experience. With over 30 artists involved this festival is the most ambitious live undertaking I've ever been a part of.", 
+    imageUrl: '/img/frasFest.jpg'
+  },
+  { 
+    id: 4, 
+    title: 'Please Wake Up Daddy', 
+    roleTitle: 'Co-Creator',
+    links: [{link: "https://pleasewakeupdaddy.com/", text: "Web Experience"}],
+    techUsed: 'Javascript, Three.js, Web Audio API, Blender',
+    description: 'An interactive installation that requires the audience to scream to wake up their sleeping father for a unique surprise. We are currently building out this experience into a larger videogame/theater experience. There is also a website version of this experience that you can interact with now.', 
+    imageUrl: '/img/wakeUpDaddy.jpg'
+  },
+  { 
+    id: 5, 
+    title: 'Theater Royale', 
+    roleTitle: 'Creative Technologist',
+    techUsed: 'Javascript, Socket.io, OBS',
+    links: [{link: "https://www.twitch.tv/theatreroyale", text: "Theater Royale Twitch" }, {link: "https://www.americantheatre.org/2025/03/07/game-plays-the-thing-for-new-fortnite-based-theatre-company/", text: "Press: American Theater"}],
+    description: "It's both a theater company and an interactive livestream. Two actors perform a play—currently in rotation are Waiting for Godot by Samuel Beckett, Antigone by Sophocles, and Love Letters by A. R. Gurney—while simultaneously playing the video game Fortnite.", 
+    imageUrl: '/img/theaterRoyal.jpg'
+  },
+  { 
+    id: 6, 
+    title: 'Dear Dancer', 
+    roleTitle: 'Creative Technologist/Web Developer',
+    techUsed: 'Javascript, Three.js, Blender',
+    description: 'A web experience that allows the user to interact with a 3D dancer via typing. Each letter is uniquely mapped to a dance move which have all been performed and mapped onto an avatar, and as the user types the words will be perfomred back at the user.', 
+    imageUrl: '/img/dearDancer.png'
+  },
+  { 
+    id: 7, 
+    title: 'To Start in the Dark', 
+    techUsed: 'Ableton, Acelorometers, Max For Live',
+    description: 'A live performance/Interactive installation that explored movement based control of music. The goal was to create an understandable system that could be explored much like coming into contact with a new instrument or an unfamiliar way to express yourself that can be easily explored.', 
+    imageUrl: '/img/toStartInTheDark.jpg'
+  },
+  { 
+    id: 8, 
+    title: 'Tempo Turtle', 
+    links: [{link: "https://tempoturtle.com/", text: "Our Website"}],
+    techUsed: 'React, Three.js, Juce, C++',
+    description: 'A company I started with my friend for our exploration of music technology both on the hardware and software side. We have created a couple of products and are currently working on creating a couple open-source software effects.', 
+    imageUrl: '/img/tempoTurtle.jpg'
+  },
+];
+---
+
+<div id="projects" class="projects-container">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+        {projects.map((project) => (
+            <div 
+                key={project.id} 
+                id={`project-${project.id}`}
+                class="project-card"
+                data-project-id={project.id}
+            >
+                <img 
+                    src={project.imageUrl} 
+                    alt={project.title} 
+                    class="project-image"
+                    data-project-trigger={project.id}
+                />
+                
+                <div class="project-text">
+                    <h3 data-project-trigger={project.id}>{project.title}</h3>
+                    <h5>{project.roleTitle}</h5>
+                    <div class="project-tech" style="display: none;">
+                        {project.techUsed && <h5>Tools: {project.techUsed}</h5>}
+                    </div>
+                    <div class="project-links-container" style="display: none;">
+                        {project.links && (
+                            <>
+                                <h5 style="margin-bottom: 0;">Links:</h5>
+                                <ul>
+                                    {project.links.map((link, index) => (
+                                        <li><a class="project-links" href={link.link} target="_blank" rel="noopener noreferrer">{link.text}</a></li>
+                                    ))}
+                                </ul>
+                            </>
+                        )}
+                    </div>
+                    <p>{project.description}</p>
+                </div>
+
+                <div class="project-details" style="display: none;">
+                    {project.details && <p>{project.details}</p>}
+                    {project.gallery && (
+                        <div class="gallery" style="max-width: 600px; margin: auto;">
+                            <div class="image-gallery">
+                                {project.gallery.map((image, index) => (
+                                    <img 
+                                        src={image.original} 
+                                        alt={`${project.title} gallery ${index + 1}`}
+                                        class="gallery-image"
+                                        style={index === 0 ? "display: block;" : "display: none;"}
+                                        data-gallery={project.id}
+                                        data-index={index}
+                                    />
+                                ))}
+                                {project.gallery.length > 1 && (
+                                    <div class="gallery-controls">
+                                        <button class="gallery-prev" data-gallery={project.id}>‹</button>
+                                        <span class="gallery-counter">
+                                            <span class="gallery-current">1</span> / {project.gallery.length}
+                                        </span>
+                                        <button class="gallery-next" data-gallery={project.id}>›</button>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </div>
+        ))}
+    </div>
+</div>
+
+<style>
+    .projects-container {
+        padding: 20px;
+        max-width: 1500px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .project-card {
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        overflow: hidden;
+        padding: 20px;
+        border-radius: 8px;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        color: black;
+    }
+
+    :global(.dark) .project-card {
+        color: white;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 
+            0 10px 25px rgba(0, 0, 0, 0.15),
+            0 20px 40px rgba(0, 0, 0, 0.08),
+            0 0 0 1px rgba(0, 0, 0, 0.05);
+    }
+
+    :global(.dark) .project-card:hover {
+        box-shadow: 
+            0 10px 25px rgba(255, 255, 255, 0.2),
+            0 20px 40px rgba(255, 255, 255, 0.1),
+            0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+
+    .project-card.expanded:hover {
+        transform: none;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 50px;
+        row-gap: 30px;
+        justify-items: center;
+    }
+
+    .project-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .project-card p {
+        font-size: 1rem;
+    }
+
+    .project-image {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+    .project-text {
+        margin-top: 10px;
+    }
+
+    .project-details {
+        margin-top: 0;
+        font-size: 1.1rem;
+        grid-column: span 2;
+    }
+
+    .project-details p {
+        margin-bottom: 35px;
+    }
+
+    .project-card.expanded {
+        max-width: 100%;
+        grid-column: span 2;
+        padding-bottom: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 50px;
+        row-gap: 10px;
+    }
+
+    .expanded .project-text h3 {
+        margin-top: 0;
+    }
+
+    .project-card.expanded .project-text {
+        display: block;
+    }
+
+    .project-card ul {
+        margin-top: 0;
+    }
+
+    .project-links {
+        font-size: 0.9em;
+        transition: color 0.3s;
+        position: relative;
+        color: black;
+        border-bottom: 2px solid transparent;
+    }
+
+    :global(.dark) .project-links {
+        color: white;
+    }
+
+    .project-links:hover {
+        color: #808080 !important;
+    }
+
+    /* Gallery styles */
+    .image-gallery {
+        position: relative;
+    }
+
+    .gallery-image {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .gallery-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: 10px;
+    }
+
+    .gallery-prev, .gallery-next {
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gallery-prev:hover, .gallery-next:hover {
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .gallery-counter {
+        color: #666;
+        font-size: 14px;
+    }
+
+    :global(.dark) .gallery-counter {
+        color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+        .projects-container {
+            padding: 0;
+        }
+
+        .projects-grid {
+            display: block;
+        }
+
+        .project-card.expanded {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card.expanded img {
+            display: block;
+            width: 100%;
+        }
+
+        .project-details {
+            margin-top: -40px;
+        }
+    }
+</style>
+
+<script>
+    let expandedProjectId = null;
+    
+    function handleProjectClick(id) {
+        // Toggle the expanded state for the clicked project
+        const wasExpanded = expandedProjectId === id;
+        
+        // Collapse all projects first
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.classList.remove('expanded');
+            card.querySelectorAll('.project-tech, .project-links-container, .project-details').forEach(el => {
+                el.style.display = 'none';
+            });
+        });
+        
+        if (!wasExpanded) {
+            expandedProjectId = id;
+            const projectCard = document.getElementById(`project-${id}`);
+            if (projectCard) {
+                projectCard.classList.add('expanded');
+                projectCard.querySelectorAll('.project-tech, .project-links-container, .project-details').forEach(el => {
+                    el.style.display = 'block';
+                });
+                
+                // Scroll to the project
+                setTimeout(() => {
+                    projectCard.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+                }, 200);
+            }
+        } else {
+            expandedProjectId = null;
+        }
+    }
+    
+    function initGallery() {
+        // Gallery navigation
+        document.querySelectorAll('.gallery-prev').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const galleryId = btn.getAttribute('data-gallery');
+                navigateGallery(galleryId, -1);
+            });
+        });
+        
+        document.querySelectorAll('.gallery-next').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const galleryId = btn.getAttribute('data-gallery');
+                navigateGallery(galleryId, 1);
+            });
+        });
+    }
+    
+    function navigateGallery(galleryId, direction) {
+        const images = document.querySelectorAll(`[data-gallery="${galleryId}"]`);
+        const visibleImage = Array.from(images).find(img => img.style.display === 'block');
+        const currentIndex = parseInt(visibleImage.getAttribute('data-index'));
+        const totalImages = images.length - 2; // Subtract the prev/next buttons
+        
+        let newIndex = currentIndex + direction;
+        if (newIndex < 0) newIndex = totalImages - 1;
+        if (newIndex >= totalImages) newIndex = 0;
+        
+        // Hide all images
+        images.forEach(img => {
+            if (img.classList.contains('gallery-image')) {
+                img.style.display = 'none';
+            }
+        });
+        
+        // Show the new image
+        const newImage = document.querySelector(`[data-gallery="${galleryId}"][data-index="${newIndex}"]`);
+        if (newImage) {
+            newImage.style.display = 'block';
+        }
+        
+        // Update counter
+        const counter = document.querySelector(`#project-${galleryId} .gallery-current`);
+        if (counter) {
+            counter.textContent = (newIndex + 1).toString();
+        }
+    }
+    
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+        // Add click event listeners to project triggers
+        document.querySelectorAll('[data-project-trigger]').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const projectId = parseInt(trigger.getAttribute('data-project-trigger'));
+                handleProjectClick(projectId);
+            });
+        });
+        
+        initGallery();
+    });
+</script>

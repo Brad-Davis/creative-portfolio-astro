@@ -1,0 +1,48 @@
+---
+// LightSwitch component for dark/light mode toggle
+---
+
+<div class="lightswitch">
+    <img
+        id="lightswitch-img"
+        src="/img/off.jpg"
+        alt="Dark Mode"
+    />
+</div>
+
+<script>
+    // Dark mode toggle functionality
+    let darkMode = true;
+    
+    function updateTheme() {
+        document.body.classList.toggle('dark', darkMode);
+        const img = document.getElementById('lightswitch-img');
+        if (img) {
+            img.src = darkMode ? '/img/off.jpg' : '/img/on.jpg';
+            img.alt = darkMode ? 'Dark Mode' : 'Light Mode';
+        }
+    }
+    
+    function toggleDarkMode() {
+        darkMode = !darkMode;
+        updateTheme();
+        // Save preference to localStorage
+        localStorage.setItem('darkMode', darkMode.toString());
+    }
+    
+    // Initialize theme on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        // Check for saved preference
+        const savedMode = localStorage.getItem('darkMode');
+        if (savedMode !== null) {
+            darkMode = savedMode === 'true';
+        }
+        updateTheme();
+        
+        // Add click event listener
+        const lightswitch = document.getElementById('lightswitch-img');
+        if (lightswitch) {
+            lightswitch.addEventListener('click', toggleDarkMode);
+        }
+    });
+</script>
