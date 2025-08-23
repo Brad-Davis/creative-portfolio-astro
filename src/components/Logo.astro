@@ -60,7 +60,7 @@ export default class Sketch {
 		
 		// Animation properties
 		this.animationRadius = 2;
-		this.animationSpeed = 0.5;
+		this.animationSpeed = 0.05;
 
 		this.time = 0
 		this.resize()
@@ -212,9 +212,8 @@ export default class Sketch {
 		const z = Math.sin(this.time * this.animationSpeed) * this.animationRadius;
 		
 		// Smoothly interpolate camera position
-		this.scene.position.x += x * 0.00005;
-		this.scene.position.z += z * 0.00005;
-		this.scene.position.y = 0; // Keep slight elevation
+		this.scene.rotation.x += x * 0.0001
+		this.scene.rotation.z += z * 0.0001
     
 
 		this.renderer.render( this.scene, this.camera );
