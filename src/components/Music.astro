@@ -64,14 +64,14 @@ const musicData = [
     <h2>Music</h2>
     <div class="container-music">
         {musicData.map((music, index) => (
-            <div key={index} class="col-music">
-                <a href={music.link} target="_blank">
+            <a href={music.link} target="_blank" class="music-link">
+                <div key={index} class="col-music">
                     <img src={music.image} alt={music.description} />
-                </a>
-                <h3>{music.title}</h3>
-                <p>{music.role}</p>
-                <p class="music-description">{music.description}</p>
-            </div>
+                    <h3>{music.title}</h3>
+                    <p>{music.role}</p>
+                    <p class="music-description">{music.description}</p>
+                </div>
+            </a>
         ))}
     </div>
 </div>
@@ -85,7 +85,10 @@ const musicData = [
         justify-items: center;
     }
 
-    .col-music {
+    .music-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
         margin: 1%;
         box-sizing: border-box;
         transition: transform 0.3s ease, box-shadow 0.3s ease, max-height 0.3s ease;
@@ -96,38 +99,42 @@ const musicData = [
         margin: -20px;
     }
 
-    .col-music:hover {
+    .music-link:hover {
         transform: translateY(-10px);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     }
 
     /* Light mode hover effects */
-    body:not(.dark) .col-music:hover {
+    body:not(.dark) .music-link:hover {
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     }
 
     /* Dark mode hover effects */
-    body.dark .col-music:hover {
+    body.dark .music-link:hover {
         box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
     }
 
-    .col-music img {
+    .col-music {
+        /* Remove styling that's now on .music-link */
+    }
+
+    .music-link img {
         width: 100%;
         height: auto;
         border-radius: 8px;
         transition: opacity 0.3s ease;
     }
 
-    .col-music:hover img {
+    .music-link:hover img {
         opacity: 0.9;
     }
 
-    .col-music h3 {
+    .music-link h3 {
         margin: 10px 0 5px 0;
         transition: color 0.3s ease;
     }
 
-    .col-music p {
+    .music-link p {
         margin: 5px 0;
         transition: color 0.3s ease;
     }
@@ -137,7 +144,7 @@ const musicData = [
         opacity: 0.8;
     }
 
-    .col-music:hover .music-description {
+    .music-link:hover .music-description {
         opacity: 1;
     }
 
@@ -148,15 +155,15 @@ const musicData = [
         }
 
         /* Reduce hover effects on mobile for better touch experience */
-        .col-music:hover {
+        .music-link:hover {
             transform: translateY(-5px);
         }
 
-        body:not(.dark) .col-music:hover {
+        body:not(.dark) .music-link:hover {
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        body.dark .col-music:hover {
+        body.dark .music-link:hover {
             box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
         }
     }
