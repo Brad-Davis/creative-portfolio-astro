@@ -2,6 +2,33 @@
 ---
 // Projects component
 const projects = [
+  
+    {
+        id: -1,
+        title: 'Kinfolk',
+        roleTitle: 'Technical Floor Manager',
+        techUsed: 'XR, AR, A/V Engineering, Touchdesigner, MadMapper,  Omnidirectional Audio, Multi-Projection Mapping',
+        links: [{link: 'https://www.kinfolk.com/', text: 'Kinfolk Website'}, 
+        {link: "https://www.kinfolktech.org/exhibitions/kin-festival", text: "Kinfolk Festival"}, 
+        {link: "https://www.nytimes.com/2025/10/29/arts/design/james-baldwin-ai-typewriter.html", text: "NY Times Press"},
+        {link: "https://agog.org/event/kin-a-festival-of-memory-and-imagination/", text: "Agog Guide"},
+     ],
+      description: 'An immersive AR exhibition that transforms spaces into living archives, honoring underrepresented historical figures through digital monuments and interactive storytelling.',
+     gallery: [
+        {original: "/img/kin1.jpg", type: "image"},
+        {original: "/img/kin2.jpg", type: "image"},
+        {original: "/img/kin3.png", type: "image"},
+        {original: "/img/kin4.webp", type: "image"},
+     ] ,
+     details: `
+    Kinfolk is an immersive AR exhibition that transforms spaces into living archives, honoring underrepresented historical figures through digital monuments and interactive storytelling.
+    <br><br>
+    I served as Technical Floor Manager, overseeing the setup, maintenance, and takedown of this large-scale production. My responsibilities included ensuring the technical integrity of all installations, which spanned a wide range of mediums and technologies. These involved extensive use of TouchDesigner, Arduino, VR/XR/AR systems, haptic immersive suits, omnidirectional audio, and complex multi-projection mapping—including a projector suspended 30 feet in the air, casting imagery onto a life-sized loom.
+    <br><br>
+    This exhibition attracted thousands, of attendees and garnered press coverage from New York Times. Beyond its scale and visibility, the project demanded both detailed artist management and rapid, real-time troubleshooting. Challenges ranged from recovering after an unexpected power surge that disabled multiple computers, to navigating faulty Arduino hardware, maintaining delicate haptic suits, and ensuring the daily technical stability of each installation. This experience represented a true culmination of the emerging technologies I have been deeply engaged with—spanning interactive systems, immersive media, and responsive environments.
+    `,
+    imageUrl: '/img/kin1.jpg',
+    },
    { 
     id: 0, 
     title: 'Tribeca Immersive 2025', 
@@ -27,7 +54,7 @@ This exhibition attracted hundreds, if not thousands, of attendees and garnered 
     roleTitle: 'Creative Technologist/Score Composer',
     links: [{link: 'https://www.instagram.com/chachafestival/?hl=en', text: 'Cha Cha Fest Instagram'}, {link: 'https://interiordesign.net/designwire/highlights-from-new-yorks-cha-cha-festival/#:~:text=Oolong%20Tea%20House%3A%20Morning%20Light%20by%20Aaron%20Santiago%20%26%20Michaela%20Ternasky%2DHolland&text=Michaela%20Ternasky%2DHolland-,Oolong%20Tea%20House.,-Visual%20artists%20Aaron', text: 'Press from Interior Design Magazine'}],
     techUsed: 'Javascript, Tone.js, Socket.io, OpenAI GPT, Touchdesigner, Ableton',
-    description: 'An immersive installation surrounding the ancient art of tea leaf reading. Participants place down their tea cup where and are offers divine wisdom in return.', 
+    description: 'An immersive installation surrounding the ancient art of tea leaf reading. Participants place down their tea cup and are offered divine wisdom in return.', 
     details: "This installation was presented at the Cha Cha Festival in New York City that celebrates tea and its rituals. Within the WSA building, the installation was designed to create a meditative space where participants could seek guidance through the ritual of tea leaf reading. My role involved composing the score for the installation, and working closely with head Artist Aaron Santiago. I utilized Tone.js for the audio synthesis and Socket.io to handle real-time communication between the installation's components. We used OpenAI's GPT model to provide dynamic and personalized responses based on the tea leaves' patterns. which allowed for a seamless blend of audio and visual elements, enhancing the overall experience.",
     imageUrl: '/img/morningLight.jpg',
     gallery: [
@@ -67,7 +94,7 @@ This exhibition attracted hundreds, if not thousands, of attendees and garnered 
     With over 30 artists involved this was the most ambitious live show I've ever been a part of. After organizing many shows around NYC and Brooklyn for about 3 years, I decided to take the leap and create my own festival. 
     Working with family friends who own a wedding venue in upstate NY, we were able to create a space that was truly unique and one of a kind. We built out an indoor and outdoor performance space that allowed for live projections, music, and a truly immersive experience. 
     <br><br>
-    The festival was a huge success and not only were we able to showcase the amazing artists that attened, but we are confirmed to be back for 2026! Excited to make Fras Fest a yearly event and continue to present the best of the northeast's music scene.
+    The festival was a huge success and not only were we able to showcase the amazing artists that attended, but we are confirmed to be back for 2026! Excited to make Fras Fest a yearly event and continue to present the best of the northeast's music scene.
     `,
     imageUrl: '/img/frasFest.jpg',
     links: [{link: "https://www.instagram.com/frasfest/", text: "Fras Fest Instagram"}, {link: "https://www.sassafrasruins.com/", text: "Our Venue"}],
@@ -101,8 +128,7 @@ This exhibition attracted hundreds, if not thousands, of attendees and garnered 
     description: "It's both a theater company and an interactive livestream. Working with under Lincoln Center's resident Brandon Powers, we created a system to allow actors to play Fortnite while performing a play and stream on Twitch.", 
     details: `
     Two actors perform a play—currently in rotation are Waiting for Godot by Samuel Beckett, Antigone by Sophocles, and Love Letters by A. R. Gurney—while simultaneously playing the video game Fortnite. My role in this project
-    was to create an overlay for the actors to be able to read the script while playing the game, and allow for a third party to be able to send messages to the actors during the show. We created a web app that acted as an overlay which scrolled through the script and displayed it on a screen in front of the actors
-    while 
+    was to create an overlay for the actors to be able to read the script while playing the game, and allow for a third party to be able to send messages to the actors during the show. We created a web app that acted as an overlay which scrolled through the script and displayed it on a screen in front of the actors while they played the game.
     `,
     imageUrl: '/img/theaterRoyal.jpg'
   },
@@ -114,7 +140,7 @@ This exhibition attracted hundreds, if not thousands, of attendees and garnered 
     links: [{link: "https://www.deardancer.io/", text: "Dear Dancer Website"}, {link: "https://chromewebstore.google.com/detail/dear-dancer/hoajbihdcdmnmjlgkmlkecpcnkmokipb", text: "Chrome Extension"}],
     description: 'A web experience that allows the user to interact with a 3D dancer via typing. This functions both as a Chrome extension you can use across the web and an addition to the Dear Dancer website.', 
     details: `
-    Each letter is uniquely mapped to a dance move which have all been performed, 3D modeled and mapped onto an avatar, and as the user types the words will be perfomred back at the user.
+    Each letter is uniquely mapped to a dance move which have all been performed, 3D modeled and mapped onto an avatar, and as the user types the words will be performed back at the user.
     <br><br>
     This project was a real challenge and taught me a lot about 3D modeling and animation. I also learned a lot about the complexities of working with 3D models in a web environment, specifically how to optimize them for the web and allow for a fully client side experience to avoid what could be maliciously used as a key tracker.
     `,
@@ -136,7 +162,7 @@ This exhibition attracted hundreds, if not thousands, of attendees and garnered 
     <br><br>
     The first product we created is called the Brad Pad. It is a hardware device designed for music production with a form factor that allows you to hold the device in your hands.
     <br><br>
-    We are currently working on a software effect that allows you to use a large turtle dial to control the speed of your playback. We are focused on creating intuative and easy to use music production tools that are accessible to everyone.
+    We are currently working on a software effect that allows you to use a large turtle dial to control the speed of your playback. We are focused on creating intuitive and easy to use music production tools that are accessible to everyone.
     `,
     description: 'A company I started with my friend for our exploration of music technology both on the hardware and software side. We have created a couple of products and are currently working on creating a couple open-source software effects.', 
     imageUrl: '/img/tempoTurtle.jpg'
@@ -146,10 +172,19 @@ This exhibition attracted hundreds, if not thousands, of attendees and garnered 
 const discarded =  [{ 
     id: 7, 
     title: 'To Start in the Dark', 
-    techUsed: 'Ableton, Acelorometers, Max For Live',
+    techUsed: 'Ableton, Accelerometers, Max For Live',
     description: 'A live performance/Interactive installation that explored movement based control of music. The goal was to create an understandable system that could be explored much like coming into contact with a new instrument or an unfamiliar way to express yourself that can be easily explored.', 
     imageUrl: '/img/toStartInTheDark.jpg'
-  }]
+  },   {
+        id: -2,
+        title: 'We Have No Need of Other Worlds (We Need Mirrors)',
+        roleTitle: 'Technical Director',
+        techUsed: 'Ableton, Resolume, LED Pulse, LED Matrix, Touchdesigner, Live A/V Mixing Engineering, Omnidirectional Audio',
+        links: [{link: "https://utrfest.org/program/we-have-no-need-of-other-worlds-we-need-mirrors/", text: "Under The Radar Festival"}],
+        description: 'A performance that explores the theme of mirrors and how they can be used to reflect the world around us.',
+        details: 'This performance was presented at the Under The Radar Festival in New York City. The performance was a collaboration between the artist and the technical director. The technical director was responsible for the technical aspects of the performance, including the lighting, sound, and video. The artist was responsible for the artistic aspects of the performance, including the story and the characters.',
+        imageUrl: '/img/mirrors.jpg',
+    }]
 ---
 
 <div id="projects" class="projects-container">
@@ -950,6 +985,19 @@ const discarded =  [{
     function closeModal() {
         const modal = document.getElementById('project-modal');
         if (modal) {
+            // Pause all videos in the modal before closing
+            const videos = modal.querySelectorAll('video');
+            videos.forEach(video => {
+                video.pause();
+                video.currentTime = 0; // Optional: reset to beginning
+            });
+            
+            // Scroll modal content to top
+            const modalContent = modal.querySelector('.modal-content');
+            if (modalContent) {
+                modalContent.scrollTop = 0;
+            }
+            
             modal.classList.remove('active');
             document.body.style.overflow = ''; // Restore background scroll
         }
