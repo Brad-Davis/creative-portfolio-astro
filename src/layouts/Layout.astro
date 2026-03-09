@@ -19,11 +19,18 @@ const { title = "BCD-ROM", description = "Bradley CD AKA BCD-ROM is a creative t
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<div class="cd-section" id="cd-section">
+			<div class="cd-section__content">
+				<slot />
+			</div>
+		</div>
 	</body>
 </html>
 
 <style is:global>
+
+
+
 	@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&display=swap');
 
 	@font-face {
@@ -55,6 +62,80 @@ const { title = "BCD-ROM", description = "Bradley CD AKA BCD-ROM is a creative t
 	body.dark {
 		background-color: black;
 		color: white;
+	}
+	
+
+	.cd-section {
+		position: relative;
+		min-height: 100%;
+		overflow: visible;
+	}
+
+	.cd-section__content {
+		position: relative;
+		z-index: 1;
+	}
+
+	/* CD reflection: sits on top of content so it's visible, pointer-events: none so clicks pass through */
+	.cd-section::before {
+		content: "";
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		width: 200vmax;
+		height: 200vmax;
+		margin-left: -100vmax;
+		margin-top: -100vmax;
+		pointer-events: none;
+		opacity: 0;
+		z-index: 9999;
+
+		/* rainbow spectrum - CD prism reflection */
+		background: radial-gradient(
+			ellipse 70% 40% at center,
+			rgba(255, 0, 0, 0.9),
+			rgba(255, 130, 0, 0.9),
+			rgba(255, 255, 0, 0.9),
+			rgba(0, 255, 100, 0.9),
+			rgba(0, 200, 255, 0.9),
+			rgba(100, 100, 255, 0.9),
+			rgba(200, 0, 255, 0.9),
+			rgba(255, 0, 100, 0.9)
+		);
+
+		filter: blur(60px) saturate(180%);
+
+		/* overlay = visible on both light and dark; use screen for a softer "light" look */
+		mix-blend-mode: screen;
+
+		/* thin band - the rainbow strip that sweeps */
+		mask-image: linear-gradient(
+			110deg,
+			transparent 40%,
+			black 47%,
+			black 53%,
+			transparent 60%
+		);
+		-webkit-mask-image: linear-gradient(
+			110deg,
+			transparent 40%,
+			black 47%,
+			black 53%,
+			transparent 60%
+		);
+
+		transform: translateX(-150%) rotate(10deg);
+		transition: transform 1.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
+	}
+
+	.cd-section.active::before {
+		opacity: 0.7;
+		transform: translateX(150%) rotate(10deg);
+	}
+
+	body.dark .cd-section.active::before {
+		opacity: 0.85;
+		mix-blend-mode: screen;
 	}
 
 	h1, h2, h3 {
@@ -164,3 +245,47 @@ const { title = "BCD-ROM", description = "Bradley CD AKA BCD-ROM is a creative t
 		}
 	}
 </style>
+
+<script>
+	// Trigger CD reflection sweep on load and when user scrolls (e.g. back to top)
+	function runCdSweep() {
+		const section = document.getElementById('cd-section');
+		if (!section) return;
+		section.classList.remove('active');
+		section.offsetHeight;
+		section.classList.add('active');
+		setTimeout(() => section.classList.remove('active'), 2000);
+	}
+
+	function initCdReflection() {
+		const section = document.getElementById('cd-section');
+		if (!section) return;
+
+		// Run once on load
+		setTimeout(runCdSweep, 300);
+
+		// Trigger when user scrolls back near the top
+		const TOP_THRESHOLD = 180;
+		const COOLDOWN_MS = 3500;
+		let lastSweep = 0;
+		let wasPastTop = false;
+
+		function onScroll() {
+			const y = window.scrollY ?? document.documentElement.scrollTop;
+			if (y > TOP_THRESHOLD) wasPastTop = true;
+			if (y <= TOP_THRESHOLD && wasPastTop && Date.now() - lastSweep > COOLDOWN_MS) {
+				wasPastTop = false;
+				lastSweep = Date.now();
+				runCdSweep();
+			}
+		}
+
+		window.addEventListener('scroll', onScroll, { passive: true });
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initCdReflection);
+	} else {
+		initCdReflection();
+	}
+</script>
