@@ -179,6 +179,11 @@ const { title = "BCD-ROM", description = "Bradley CD AKA BCD-ROM is a creative t
 		width: 100%;
 	}
 
+	/* Bottom light switch: hidden on desktop, shown on mobile (see media query) */
+	.lightswitch-bottom {
+		display: none;
+	}
+
 	nav {
 		flex-grow: 1;
 	}
@@ -219,8 +224,31 @@ const { title = "BCD-ROM", description = "Bradley CD AKA BCD-ROM is a creative t
 			width: 100%;
 		}
 
-		.lightswitch {
+		/* Light switch: hide in header on mobile */
+		.flexyyy .lightswitch {
 			display: none;
+		}
+
+		/* Light switch at bottom of page (in document flow) – visible only on mobile */
+		.lightswitch-bottom {
+			display: flex !important;
+			justify-content: center;
+			align-items: center;
+			padding: 24px 16px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.lightswitch-bottom .lightswitch {
+			padding: 0;
+			margin: 0;
+			width: auto;
+		}
+
+		.lightswitch-bottom .lightswitch img {
+			max-width: 120px;
+			width: auto;
+			height: auto;
 		}
 
 		nav li {

@@ -211,8 +211,8 @@ export default class Sketch {
 		const z = Math.sin(this.time * this.animationSpeed) * this.animationRadius;
 		
 		// Smoothly interpolate camera position
-		this.scene.rotation.x += x * 0.0001
-		this.scene.rotation.z += z * 0.0001
+		this.scene.rotation.x += x * 0.001
+		this.scene.rotation.z += z * 0.001
     
 
 		this.renderer.render( this.scene, this.camera );
