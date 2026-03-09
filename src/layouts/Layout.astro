@@ -173,15 +173,20 @@ const { title = "BCD-ROM", description = "Bradley CD AKA BCD-ROM is a creative t
 		margin: auto;
 		box-sizing: border-box;
 		padding: 75px;
+		background: transparent;
+		background-color: transparent;
 	}
 
 	.lightswitch img {
 		width: 100%;
+		-webkit-tap-highlight-color: transparent;
 	}
 
 	/* Bottom light switch: hidden on desktop, shown on mobile (see media query) */
 	.lightswitch-bottom {
 		display: none;
+		background: transparent;
+		background-color: transparent;
 	}
 
 	nav {
@@ -237,19 +242,23 @@ const { title = "BCD-ROM", description = "Bradley CD AKA BCD-ROM is a creative t
 			padding: 24px 16px;
 			width: 100%;
 			box-sizing: border-box;
-			background: transparent;
+			background: transparent !important;
+			background-color: transparent !important;
 		}
 
 		.lightswitch-bottom .lightswitch {
 			padding: 0;
 			margin: 0;
 			width: auto;
+			background: transparent !important;
+			background-color: transparent !important;
 		}
 
 		.lightswitch-bottom .lightswitch img {
 			max-width: 120px;
 			width: auto;
 			height: auto;
+			-webkit-tap-highlight-color: transparent;
 		}
 
 		nav li {
