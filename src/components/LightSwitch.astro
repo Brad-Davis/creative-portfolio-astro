@@ -22,10 +22,17 @@
         });
     }
 
+    function playSwitchSound() {
+        const sound = new Audio(darkMode ? '/img/lightOff.mp3' : '/img/lightOn.mp3');
+        sound.volume = 1;
+        sound.play().catch(() => {});
+    }
+
     function toggleDarkMode() {
         darkMode = !darkMode;
         updateAllLightSwitches();
         localStorage.setItem('darkMode', darkMode.toString());
+        playSwitchSound();
     }
 
     document.addEventListener('DOMContentLoaded', () => {
