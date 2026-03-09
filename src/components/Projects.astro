@@ -2,7 +2,20 @@
 ---
 // Projects component
 const projects = [
-  
+    {
+        id: -2,
+        title: 'We Have No Need of Other Worlds',
+        roleTitle: 'Technical Director',
+        techUsed: 'Ableton, Resolume, LED Pulse, LED Matrix, TouchDesigner, Live A/V Mixing Engineering, Omnidirectional Audio',
+        links: [{link: "https://utrfest.org/program/we-have-no-need/", text: "Under The Radar Festival"}, {link: "https://www.onx.studio/onx-programming/utr-2026-we-have-no-need-of-other-worlds-we-need-mirrors-by-graham-sack", text: "Onassis ONX"},{link: "https://therecs.co.uk/we-have-no-need-of-other-worlds-we-need-mirrors/", text: "The Recs Review"}],
+        description: 'A live theater performance by Graham Sack that explores the creators final evening with his late father by dwelving into his old notebook with dreamlike visuals on a 3D Volumetric Display from LED Pulse.',
+        details: `This performance was presented at the Under The Radar Festival within Onassis ONX\'s new Downtown Manhattan Gallery with the full title, <i>We Have No Need of Other Worlds (We Need Mirrors)</i>. As technical director, I was responsible for install and smooth operation of the Volumetric LED Display, the 12 point spatial-audio system, the theatrical lighting, and the cueing system of the performance throughout it\'s run. 
+        <br><br>
+        This theatrical experience which was developed over the month and a half leading up to the show was created in tandem with the technology that surrounded the performer. It was truly a harrowing artistic and technical undertaking, requiring the most complex TouchDesigner system I've ever implemented which communicated directly with the EOS lighting system, which controlled 12 theatrical lights,
+        an Ableton file, which routed spatialized audio to 12 individual speakers mounted around the space, and, most importantly, with Resolume on a separate computer which controlled the visuals on the volumetric display.
+        ` ,
+        imageUrl: '/img/mirrors1.jpg',
+    },
     {
         id: -1,
         title: 'KIN: A Festival of Memory and Imagination',
@@ -13,7 +26,7 @@ const projects = [
         {link: "https://www.nytimes.com/2025/10/29/arts/design/james-baldwin-ai-typewriter.html", text: "NY Times Press"},
         {link: "https://agog.org/event/kin-a-festival-of-memory-and-imagination/", text: "Agog Guide"},
      ],
-      description: 'An immersive AR exhibition with Kinfolk that transforms spaces into living archives, honoring underrepresented historical figures through digital monuments and interactive storytelling.',
+      description: 'An immersive AR exhibition with Kinfolk that transformed Downtown Manhattan\'s WSA building into living archives, honoring underrepresented historical figures through digital monuments and interactive storytelling.',
      gallery: [
         {original: "/img/kin1.jpg", type: "image"},
         {original: "/img/kin2.jpg", type: "image"},
@@ -104,6 +117,17 @@ This exhibition attracted hundreds, if not thousands, of attendees and garnered 
       {original: "/img/ff3.mov", type: "video"},
      ],
   },
+  {
+    id: 9,
+    title: 'NYU Shanghai Guest Lecture',
+    roleTitle: "Guest Speaker",
+    techUsed: 'TouchDesigner, TouchDesigner, and TouchDesigner',
+    description: "A lecture about my work within Creative Technology, the community that invigorates me, and my obsession with TouchDesigner",
+    details: `Check out the full lecture video here: <br><br><div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; /* 16:9 aspect ratio */"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/HLnvZUtADl4?si=3SvUlch2zL5BnBut" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`,
+    imageUrl: "/img/nyuSpeaker.png",
+    links: [{link: "https://www.youtube.com/watch?v=HLnvZUtADl4", text: "Youtube Link"}],
+    gallery: [],  
+  },
   { 
     id: 4, 
     title: 'Please Wake Up Daddy', 
@@ -112,7 +136,7 @@ This exhibition attracted hundreds, if not thousands, of attendees and garnered 
     techUsed: 'Javascript, Three.js, Web Audio API, Blender',
     description: 'An interactive installation that requires the audience to scream to wake up their sleeping father for a unique surprise.', 
     details: `
-     We are currently building out this experience into a larger video game/immersive theater experience. The deeper experience will be presented at ONX Onassis this fall and will require the audience to inhabit a dejected recent college graduate fighting to figure out how to navigate their own isolation. There is also a website version of this experience that you can interact with now.
+     We are currently building out this experience into a larger video game/immersive theater experience. The deeper experience will be presented at ONX Onassis soon and will require the audience to inhabit a dejected recent college graduate fighting to figure out how to navigate their own isolation. There is also a website version of this experience that you can interact with now.
     `,
     imageUrl: '/img/wakeUpDaddy.jpg',
     gallery: [
@@ -147,7 +171,18 @@ This exhibition attracted hundreds, if not thousands, of attendees and garnered 
     imageUrl: '/img/dearDancer.png'
   },
 
-  { 
+  
+];
+
+const discarded =  [
+{ 
+    id: -2, 
+    title: 'To Start in the Dark', 
+    techUsed: 'Ableton, Accelerometers, Max For Live',
+    description: 'A live performance/Interactive installation that explored movement based control of music. The goal was to create an understandable system that could be explored much like coming into contact with a new instrument or an unfamiliar way to express yourself that can be easily explored.', 
+    imageUrl: '/img/toStartInTheDark.jpg'
+},
+{ 
     id: 8, 
     title: 'Tempo Turtle', 
     roleTitle: 'Co-Founder',
@@ -166,25 +201,7 @@ This exhibition attracted hundreds, if not thousands, of attendees and garnered 
     `,
     description: 'A company I started with my friend for our exploration of music technology both on the hardware and software side. We have created a couple of products and are currently working on creating a couple open-source software effects.', 
     imageUrl: '/img/tempoTurtle.jpg'
-  },
-];
-
-const discarded =  [{ 
-    id: 7, 
-    title: 'To Start in the Dark', 
-    techUsed: 'Ableton, Accelerometers, Max For Live',
-    description: 'A live performance/Interactive installation that explored movement based control of music. The goal was to create an understandable system that could be explored much like coming into contact with a new instrument or an unfamiliar way to express yourself that can be easily explored.', 
-    imageUrl: '/img/toStartInTheDark.jpg'
-  },   {
-        id: -2,
-        title: 'We Have No Need of Other Worlds (We Need Mirrors)',
-        roleTitle: 'Technical Director',
-        techUsed: 'Ableton, Resolume, LED Pulse, LED Matrix, Touchdesigner, Live A/V Mixing Engineering, Omnidirectional Audio',
-        links: [{link: "https://utrfest.org/program/we-have-no-need-of-other-worlds-we-need-mirrors/", text: "Under The Radar Festival"}],
-        description: 'A performance that explores the theme of mirrors and how they can be used to reflect the world around us.',
-        details: 'This performance was presented at the Under The Radar Festival in New York City. The performance was a collaboration between the artist and the technical director. The technical director was responsible for the technical aspects of the performance, including the lighting, sound, and video. The artist was responsible for the artistic aspects of the performance, including the story and the characters.',
-        imageUrl: '/img/mirrors.jpg',
-    }]
+  }]
 ---
 
 <div id="projects" class="projects-container">
@@ -494,6 +511,10 @@ const discarded =  [{
     .modal-top-info > * {
         width: 50%;
         padding-right: 35px;
+    }
+
+    :global(.image-gallery img) {
+        max-width: 100% !important;
     }
 
     @media (max-width: 768px) {
@@ -969,11 +990,11 @@ const discarded =  [{
                 }
             } else {
                 // Show main project image if no gallery
-                modalGallery.innerHTML = `
-                    <div class="image-gallery">
-                        <img src="${project.imageUrl}" alt="${project.title}" class="gallery-media gallery-image" style="display: block;" onload="checkImageAspectRatio(this)" />
-                    </div>
-                `;
+                // modalGallery.innerHTML = `
+                //     <div class="image-gallery">
+                //         <img src="${project.imageUrl}" alt="${project.title}" class="gallery-media gallery-image" style="display: block;" onload="checkImageAspectRatio(this)" />
+                //     </div>
+                // `;
             }
         }
         
