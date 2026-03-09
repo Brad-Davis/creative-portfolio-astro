@@ -735,11 +735,30 @@ const discarded =  [
 
     @media (max-width: 768px) {
         .projects-container {
-            padding: 0;
+            padding: 0 20px 0 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .projects-container h2 {
+            align-self: flex-start;
         }
 
         .projects-grid {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .projects-grid .project-card {
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .modal-content {
