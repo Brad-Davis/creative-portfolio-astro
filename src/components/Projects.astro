@@ -3,6 +3,88 @@
 // Projects component
 const projects = [
     {
+        id: -6,
+        title: 'FIELD',
+        roleTitle: 'Creative Technologist/App Developer',
+        techUsed: 'Mobile App Development, Extended Reality, Geolocation, Synchronized Audio, Producer Hub',
+        links: [
+            { link: 'https://ps21chatham.org/event/andrew-schneider-field/', text: 'PS21 Event Page' },
+            { link: 'https://www.andrewjs.com/', text: 'Andrew Schneider' },
+        ],
+        description: 'A world premiere extended reality performance by OBIE Award-winning artist Andrew Schneider, staged across the open grounds of PS21 and delivered to every audience member through their own phone and headphones.',
+        details: `<i>FIELD</i> premiered at PS21 in Chatham, NY in September 2026 as the centerpiece of Commonground, the center's annual free festival of large-scale contemporary performance. Co-commissioned by Lincoln Center for the Performing Arts and PS21, the piece is about presence, coincidence, synchronicity, and the gravity of shared public space, specifically what we notice, what we miss, and what only becomes visible when enough people are paying attention at the same time.
+        <br><br>
+        There is no proscenium here. The stage is an open hillside and the audience is the scenography. I worked as a creative technologist and app developer on the experience, building out the mobile application that every attendee carries into the field with them. The app is what holds hundreds of separate phones inside one shared moment, keeping audio and cues aligned across the crowd so that the piece can address the group and the individual at once.
+        <br><br>
+        The show was developed in residency through Lincoln Center's Collider Fellowship and the Harvard Radcliffe Institute for Advanced Study, with foundational forms developed in association with POINT.A, a collaboration between Annie Saunders and Andrew Schneider.`,
+        imageUrl: '/img/field1.jpg',
+        gallery: [
+            { original: '/img/field1.jpg', type: 'image' },
+        ],
+    },
+    {
+        id: -5,
+        title: 'Eartheater — Wasp In the Fig',
+        roleTitle: 'VFX Artist',
+        techUsed: 'TouchDesigner, Real-Time VFX, Compositing',
+        links: [
+            { link: 'https://www.youtube.com/watch?v=pcHI5d5ZK7w', text: 'Watch the Video' },
+            { link: 'https://www.thefader.com/2026/07/15/eartheater-explores-motherhood-without-going-pronatalist-on-wasp-in-the-fig', text: 'Press: The FADER' },
+        ],
+        description: 'The official music video for Eartheater\'s "Wasp In the Fig," directed by Andrew Thomas Huang, in which the artist appears as a mythic sci-fi centaur galloping across the Pennsylvania landscape and the night sky.',
+        details: `"Wasp In the Fig" comes from Eartheater's album <i>Heavenly Body: If I'm The Bottle You're The Message</i>, a record written around the conception, gestation, and birth of her first child, made after she bought back the Pennsylvania farm she grew up on. The song takes its name from the mutualistic relationship between fig trees and fig wasps, two species so precisely co-evolved that neither survives without the other.
+        <br><br>
+        Director Andrew Thomas Huang built the video around Eartheater's own dressage riding, transforming her into a centaur mother-goddess moving between the farm and the sky. I contributed VFX work on the piece in TouchDesigner, developing the treatments that push the footage out of documentary and into the mythic register the video lives in.`,
+        imageUrl: '/img/waspInTheFig.jpg',
+        gallery: [
+            { original: '/img/waspInTheFig.jpg', type: 'image' },
+            { original: '/img/wasp1.jpg', type: 'image' },
+            { original: '/img/wasp2.jpg', type: 'image' },
+            { original: '/img/wasp3.jpg', type: 'image' },
+        ],
+        video: [{ original: 'https://www.youtube.com/embed/pcHI5d5ZK7w', type: 'youtube' }],
+    },
+    {
+        id: -4,
+        title: 'Artifice: nodes:ii',
+        roleTitle: 'Technical Director',
+        techUsed: 'TouchDesigner, Live A/V, Immersive Installation, ONYX Lighting, QLab',
+        links: [
+            { link: 'https://www.onx.studio/onx-programming/nodesii-presented-by-artifice-onassis-onx', text: 'Onassis ONX' },
+            { link: 'https://artificenyc.org/', text: 'Artifice' },
+            { link: 'https://rhizome.org/community/53985/', text: 'Rhizome Community' },
+        ],
+        description: 'The second edition of Artifice\'s nodes research showcase occurred in spring 2026 at Onassis ONX, showcasing work from across the New York City new media landscape.',
+        details: `nodes:ii is the second edition of Artifice NYC's ongoing research and development showcase, co-presented with Onassis ONX. The program moves between two registers within a single space: WHITEBOX (the Lab), where practitioners expose the material process and system logic behind their work, and BLACKBOX (the Stage), where that work is encountered as live performance and immersive installation.
+        <br><br>
+        As Technical Director, I was responsible for the installation and execution of the show, integrating works spanning bio-art, sound, interactive media, and creative science into the ONX space, as well as running live A/V mixing and visuals for every performance. The showcase gathered unreleased work, prototypes, and working methods from practitioners across New York's new media landscape, treating the exhibition as both a laboratory and a stage.`,
+        imageUrl: '/img/nodes.webp',
+        gallery: [
+            { original: '/img/hero-nodesii.mp4', type: 'video' },
+        ],
+    },
+    {
+        id: -3,
+        title: 'Get Out of My Room',
+        roleTitle: 'Artist',
+        techUsed: 'Javascript, Three.js, Score Composition, Blender, LLMs, OpenAI GPT',
+        links: [{link: "https://www.onx.studio/onx-programming/onxscreens", text: "ONX Screens"}],
+        description: 'An immersive video game installation displayed at ONX Screens that explores the fears of early adulthood as the protagonist searches for a place, a community, and an understanding in a judgmental, jobless landscape.',
+        details: `Get Out of My Room is a project I created from the ground up, developing the concept, original score, and technical systems that bring the piece to life. The work examines the tension between solitude and societal acceptance, and the ways a childhood bedroom holds memory, fear, and the friction of growing up.
+        <br><br>
+        Drawing on themes that run through much of my practice, specifically alienation, queerness, and nostalgia, this piece treats the protagonist's childhood bedroom as an increasingly hostile space, where they are forced to confront their own familial fears alongside the memories of their own childhood.
+        <br><br>
+        The work was developed over the course of a year, and was presented at ONX Screens in New York City in June 2026.`,
+        imageUrl: '/img/getOutta1.png',
+        gallery: [
+            { original: '/img/getOutta1.png', type: 'image' },
+            { original: '/img/getOutta2.png', type: 'image' },
+            { original: '/img/getOutta3.jpg', type: 'image' },
+            { original: '/img/getOutta4.jpg', type: 'image' },
+        ],
+        // video: [{ original: '/img/getOuttaMyRoomLoopSCORE.mp4', type: 'video' }],
+    },
+    {
         id: -2,
         title: 'We Have No Need of Other Worlds',
         roleTitle: 'Technical Director',
@@ -134,6 +216,7 @@ This exhibition attracted thousands, of attendees and garnered press coverage fr
     links: [{link: "https://www.youtube.com/watch?v=HLnvZUtADl4", text: "Youtube Link"}],
     gallery: [],  
   },
+  /* Temporarily hidden
   { 
     id: 4, 
     title: 'Please Wake Up Daddy', 
@@ -160,13 +243,14 @@ This exhibition attracted thousands, of attendees and garnered press coverage fr
     Two actors perform a play—currently in rotation are Waiting for Godot by Samuel Beckett, Antigone by Sophocles, and Love Letters by A. R. Gurney—while simultaneously playing the video game Fortnite. My role in this project
     was to create an overlay for the actors to be able to read the script while playing the game, and allow for a third party to be able to send messages to the actors during the show. We created a web app that acted as an overlay which scrolled through the script and displayed it on a screen in front of the actors while they played the game.
     `,
-    imageUrl: '/img/theaterRoyal.jpg',
+    imageUrl: '/img/tr1.jpg',
     video: [{type: "instagram", original: `<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DGGxU-FPZyS/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="margin: auto !important; max-width: 60vw; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); max-width:540px; padding:0; width:99.375%; max-width:-webkit-calc(250px); max-width:500px !important;"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DGGxU-FPZyS/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin: auto !important; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DGGxU-FPZyS/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Lincoln Center (@lincolncenter)</a></p></div></blockquote>
 <script async src="//www.instagram.com/embed.js"></script>` }],
     gallery: [
         {original: "/img/tr1.jpg", type: "image"},
     ]
   },
+  */
   { 
     id: 6, 
     title: 'Dear Dancer', 
@@ -359,7 +443,7 @@ const discarded =  [
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.9);
-        z-index: 1000;
+        z-index: 10001;
         pointer-events: none;
         backdrop-filter: blur(5px);
     }
@@ -540,10 +624,19 @@ const discarded =  [
         }
 
         :global(.image-gallery img),
-        :global(.image-gallery video),
-        :global(.modal-video-media) {
+        :global(.image-gallery video) {
             max-width: 80vw !important;
             width: 100% !important;
+        }
+
+        :global(.image-gallery video),
+        :global(.modal-video-media) {
+            max-height: 81vh;
+            width: auto !important;
+            max-width: 80vw !important;
+            margin-left: auto;
+            margin-right: auto;
+            object-fit: contain;
         }
 
     
@@ -607,21 +700,50 @@ const discarded =  [
 
     :global(.modal-video) {
         padding-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 
     :global(.modal-video video),
+    :global(.modal-video-media) {
+        display: block;
+        margin: 20px auto 40px;
+        max-height: 81vh;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
     :global(.modal-video blockquote),
     :global(.modal-video iframe) {
         max-width: 100% !important;
-        margin-top: 20px;
-        margin-bottom: 40px;
-        padding-top: 20px;
+        margin: 20px auto 40px;
+    }
+
+    /* embed.js swaps the blockquote for an iframe carrying its own inline
+       left-aligned margin, which only !important can outrank. */
+    :global(.modal-video .instagram-media) {
+        margin: 20px auto 40px !important;
+    }
+
+    :global(.modal-video-embed) {
         position: relative;
         width: 100%;
-        display: flex;
-        flex-direction: column;
+        max-width: 900px;
+        aspect-ratio: 16 / 9;
+        margin: 20px auto 40px;
+    }
+
+    :global(.modal-video-embed iframe) {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        align-items: center;
+        height: 100%;
+        margin: 0;
+        border: 0;
     }
 
     :global(.modal-gallery .image-gallery) {
@@ -649,6 +771,10 @@ const discarded =  [
     .modal-gallery .gallery-video,
     #modal-gallery .gallery-video {
         background: black;
+        max-height: 81vh;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
     }
 
     /* If media height exceeds 50vh, reduce width to maintain better proportions */
@@ -729,10 +855,6 @@ const discarded =  [
         color: #ddd;
     }
 
-    :global(.modal-video iframe) {
-        margin: auto !important;
-    }
-
     @media (max-width: 768px) {
         .projects-container {
             padding: 0 20px 0 12px;
@@ -779,6 +901,13 @@ const discarded =  [
         #modal-gallery .gallery-media {
             max-height: 40vh;
             width: 90%;
+        }
+
+        .modal-gallery .gallery-video,
+        #modal-gallery .gallery-video {
+            max-height: 81vh;
+            width: auto;
+            max-width: 90%;
         }
 
         /* For mobile, if the viewport is very short, reduce width further */
@@ -918,10 +1047,13 @@ const discarded =  [
             if (project.video && project.video.length > 0) {
                 if (project.video[0].type === 'video') {
                     modalVideo.innerHTML = `<video src="${project.video[0].original}" controls class="modal-video-media"></video>`;
-                    modalVideo.style.display = 'block';
+                    modalVideo.style.display = 'flex';
+                } else if (project.video[0].type === 'youtube') {
+                    modalVideo.innerHTML = `<div class="modal-video-embed"><iframe src="${project.video[0].original}" title="${project.title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`;
+                    modalVideo.style.display = 'flex';
                 } else if (project.video[0].type === 'instagram') {
                     modalVideo.innerHTML = project.video[0].original;
-                    modalVideo.style.display = 'block';
+                    modalVideo.style.display = 'flex';
                     
                     // Load Instagram embed script if not already loaded
                     if (!window.instgrm) {
@@ -960,6 +1092,8 @@ const discarded =  [
                             const displayStyle = index === 0 ? 'display: block; border-radius: 8px; max-width: 80%;' : 'display: none; border-radius: 8px; max-width: 80%;';
                             
                             if (mediaType === 'video') {
+                                // Only the visible first slide autoplays; muted is required for browsers to allow it.
+                                const autoplayAttrs = index === 0 ? 'autoplay loop playsinline' : '';
                                 return `<video 
                                     src="${media.original}" 
                                     class="gallery-media gallery-video"
@@ -968,6 +1102,7 @@ const discarded =  [
                                     data-index="${index}"
                                     controls
                                     muted
+                                    ${autoplayAttrs}
                                     preload="metadata"
                                     onloadedmetadata="checkVideoAspectRatio(this)"
                                 >
