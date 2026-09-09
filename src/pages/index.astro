@@ -6,6 +6,7 @@ import LightSwitch from '../components/LightSwitch.astro';
 import Projects from '../components/Projects.astro';
 import Music from '../components/Music.astro';
 import About from '../components/About.astro';
+import VisualFilter from '../components/VisualFilter.astro';
 ---
 
 <Layout>
@@ -63,6 +64,7 @@ import About from '../components/About.astro';
             <LightSwitch />
         </div>
     </div>
+    <VisualFilter />
     <script>
         const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {

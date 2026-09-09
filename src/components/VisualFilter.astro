@@ -1,0 +1,242 @@
+---
+// VisualFilter – toggleable visual effects overlay for the site
+---
+
+<!-- SVG filters (hidden, referenced by CSS) -->
+<svg class="vf-svg-defs" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="vf-pixelate" x="0" y="0" width="100%" height="100%">
+            <feFlood x="4" y="4" width="2" height="2" />
+            <feComposite width="8" height="8" />
+            <feTile result="tiled" />
+            <feComposite in="SourceGraphic" in2="tiled" operator="in" />
+            <feMorphology operator="dilate" radius="4" />
+        </filter>
+    </defs>
+</svg>
+
+<!-- Overlay layer for texture-based effects (scanlines, noise) -->
+<div class="vf-overlay" aria-hidden="true"></div>
+
+<!-- Floating FX toggle button + dropdown (hidden for now)
+<div class="vf-panel">
+    <button class="vf-toggle" aria-label="Visual effects menu" title="FX">FX</button>
+    <div class="vf-menu" hidden>
+        <button class="vf-option" data-effect="none">None</button>
+        <button class="vf-option" data-effect="pixelate">8-Bit</button>
+        <button class="vf-option" data-effect="scanlines">CRT Scanlines</button>
+        <button class="vf-option" data-effect="grayscale">Grayscale</button>
+        <button class="vf-option" data-effect="sepia">Sepia</button>
+        <button class="vf-option" data-effect="invert">Invert</button>
+        <button class="vf-option" data-effect="hue-rotate">Hue Shift</button>
+    </div>
+</div>
+-->
+
+<style is:global>
+    /* ---- Effect classes applied to <body> ---- */
+
+    body.vf-pixelate .cd-section__content {
+        filter: url(#vf-pixelate);
+    }
+
+    body.vf-grayscale .cd-section__content {
+        filter: grayscale(1);
+    }
+
+    body.vf-sepia .cd-section__content {
+        filter: sepia(0.85) contrast(1.1);
+    }
+
+    body.vf-invert .cd-section__content {
+        filter: invert(1) hue-rotate(180deg);
+    }
+
+    body.vf-hue-rotate .cd-section__content {
+        filter: hue-rotate(180deg) saturate(1.4);
+    }
+
+    /* Scanlines overlay */
+    body.vf-scanlines .vf-overlay {
+        display: block;
+        background: repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 2px,
+            rgba(0, 0, 0, 0.15) 2px,
+            rgba(0, 0, 0, 0.15) 4px
+        );
+    }
+
+    body.vf-scanlines .cd-section__content {
+        filter: contrast(1.15) brightness(1.05);
+    }
+</style>
+
+<style>
+    .vf-svg-defs {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .vf-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9998;
+        pointer-events: none;
+    }
+
+    /* FX panel UI (hidden for now)
+    .vf-panel {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 10000;
+        font-family: 'ManifontGroteskBook', sans-serif;
+    }
+
+    .vf-toggle {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 2px solid currentColor;
+        background: rgba(255, 255, 255, 0.9);
+        color: #000;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        letter-spacing: 0.5px;
+        backdrop-filter: blur(8px);
+        transition: transform 0.15s ease, background 0.2s ease;
+    }
+
+    .vf-toggle:hover {
+        transform: scale(1.1);
+    }
+
+    :global(body.dark) .vf-toggle {
+        background: rgba(0, 0, 0, 0.85);
+        color: #fff;
+        border-color: #fff;
+    }
+
+    .vf-menu {
+        position: absolute;
+        bottom: 54px;
+        right: 0;
+        min-width: 160px;
+        padding: 6px 0;
+        border-radius: 10px;
+        border: 1px solid rgba(128, 128, 128, 0.3);
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vf-menu[hidden] {
+        display: none;
+    }
+
+    :global(body.dark) .vf-menu {
+        background: rgba(20, 20, 20, 0.95);
+        border-color: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .vf-option {
+        display: block;
+        width: 100%;
+        padding: 8px 16px;
+        border: none;
+        background: none;
+        color: inherit;
+        font-family: inherit;
+        font-size: 14px;
+        text-align: left;
+        cursor: pointer;
+        transition: background 0.1s ease;
+    }
+
+    .vf-option:hover {
+        background: rgba(128, 128, 128, 0.12);
+    }
+
+    .vf-option.active {
+        font-weight: bold;
+    }
+
+    .vf-option.active::before {
+        content: "● ";
+        font-size: 8px;
+        vertical-align: middle;
+    }
+
+    @media (max-width: 768px) {
+        .vf-panel {
+            bottom: 16px;
+            right: 16px;
+        }
+    }
+    */
+</style>
+
+<!-- FX panel script (hidden for now)
+<script>
+    const EFFECTS = ['none', 'pixelate', 'scanlines', 'grayscale', 'sepia', 'invert', 'hue-rotate'];
+    const CLASS_PREFIX = 'vf-';
+
+    let currentEffect = 'none';
+
+    function applyEffect(effect: string) {
+        EFFECTS.forEach(e => {
+            if (e !== 'none') document.body.classList.remove(CLASS_PREFIX + e);
+        });
+
+        if (effect !== 'none') {
+            document.body.classList.add(CLASS_PREFIX + effect);
+        }
+
+        currentEffect = effect;
+        localStorage.setItem('vf-effect', effect);
+
+        document.querySelectorAll<HTMLButtonElement>('.vf-option').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.effect === effect);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggle = document.querySelector<HTMLButtonElement>('.vf-toggle');
+        const menu = document.querySelector<HTMLElement>('.vf-menu');
+        if (!toggle || !menu) return;
+
+        const saved = localStorage.getItem('vf-effect');
+        if (saved && EFFECTS.includes(saved)) {
+            applyEffect(saved);
+        }
+
+        toggle.addEventListener('click', () => {
+            const isOpen = !menu.hidden;
+            menu.hidden = isOpen;
+        });
+
+        document.querySelectorAll<HTMLButtonElement>('.vf-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                applyEffect(btn.dataset.effect ?? 'none');
+                menu.hidden = true;
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            const panel = document.querySelector('.vf-panel');
+            if (panel && !panel.contains(e.target as Node)) {
+                menu.hidden = true;
+            }
+        });
+    });
+</script>
+-->

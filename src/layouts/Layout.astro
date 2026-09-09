@@ -18,7 +18,15 @@ const { title = "BCD-ROM", description = "Bradley CD AKA BCD-ROM is a creative t
 		<meta name="theme-color" content="#000000" />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="dark">
+		<script is:inline>
+			try {
+				const saved = localStorage.getItem('darkMode');
+				document.body.classList.toggle('dark', saved === null ? true : saved === 'true');
+			} catch {
+				document.body.classList.add('dark');
+			}
+		</script>
 		<div class="cd-section" id="cd-section">
 			<div class="cd-section__content">
 				<slot />
