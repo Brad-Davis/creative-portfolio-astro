@@ -3,6 +3,48 @@
 // Projects component
 const projects = [
     {
+        id: -10,
+        title: 'PLAZA',
+        roleTitle: 'Creative Technologist/App Developer',
+        techUsed: 'Mobile App Development, BROAD/CAST, Synchronized Audio, Geolocation, Producer Hub',
+        links: [
+            { link: 'https://lincolncenter.org/series/lincoln-center-presents/plaza-374', text: 'Lincoln Center Event Page' },
+            { link: 'https://www.andrewjs.com/', text: 'Andrew Schneider' },
+        ],
+        description: 'An interactive outdoor experience by Andrew Schneider that turns people-watching into the art itself, transforming Lincoln Center\'s Josie Robertson Plaza into a living artwork built from the crowd, the noise, and the strangers standing beside you.',
+        details: `<i>PLAZA</i> ran once a day from October 14 through 25, 2026 as part of Lincoln Center Immersive, the series where digital media and the real world collide. In the rush of the city it is easy to miss what, and who, is right in front of us. Over roughly seventy minutes on Josie Robertson Plaza, former Lincoln Center Collider Fellow Andrew Schneider builds a piece entirely out of what is already there: the crowd, the fountain, the passersby, and the coincidences that happen when people share a moment. You are not simply present at it, you become part of what everyone else is watching.
+        <br><br>
+        I worked as a creative technologist and app developer on the piece. It is experienced through BROAD/CAST, the mobile app developed by Andrew Schneider with myself and Annie Saunders, which every audience member carries onto the plaza with their own headphones and a charged phone. The app is what keeps hundreds of separate devices inside one shared moment out in open public space, with no house, no walls, and no control booth to fall back on. <i>PLAZA</i> is powered by Producer Hub.
+        <br><br>
+        The work was co-commissioned by Lincoln Center for the Performing Arts and PS21, with artists supported in part by Onassis ONX, and was developed in residency through Lincoln Center's Collider Fellowship and the Harvard Radcliffe Institute for Advanced Study. Foundational forms in the work were developed in association with Annie Saunders and POINT.A, and it features "Slow With Horns / Run For Your Life" by Dan Deacon. Tickets were free and the show was staged outdoors for all ages, with no two days and no two audiences alike.`,
+        imageUrl: '/img/plaza.jpg',
+        gallery: [
+            { original: '/img/plaza.jpg', type: 'image' },
+        ],
+    },
+    {
+        id: -9,
+        title: 'RECURRENCE',
+        roleTitle: 'Co-creator',
+        techUsed: 'TouchDesigner, EEG Biosensing, Ableton, Reactive Score, Projection, Lighting Design',
+        links: [
+            { link: 'https://studiodyanjong.com/#recurrence', text: 'Studio Dyan Jong' },
+            { link: 'https://www.youtube.com/watch?v=JbVkGY0t_nk', text: 'Watch the Documentation' },
+        ],
+        description: 'A live EEG light installation made with Los Angeles light artist Dyan Jong, where viewers wear a headset and watch their own gamma waves become an ephemeral architecture of light and sound.',
+        details: `<i>RECURRENCE</i> is a TouchDesigner-powered live EEG projected light installation created in collaboration with Dyan Jong, commissioned by the Alchemy Art Show and staged across a 21' x 23' x 13' room in Los Angeles in September 2026. Viewers are invited to put on the provided EEG headset, and their own gamma waves become the piece. Gamma is the band tied to the mind's highest level of concentration and perception, and the recurring tethers it draws visualize connections between the past and the present.
+        <br><br>
+        I co-created the piece with Dyan Jong. The headset streams live EEG data into TouchDesigner, which drives both the projected light structure and a score that moves with the reading, so light and sound are being written by the same signal at the same moment and no two visitors encounter the same work. The music was composed with Lucy Yao.
+        <br><br>
+        Dyan Jong makes light installation art endemic to Los Angeles, repurposing film lights into large-scale immersive temporalities. The instruments are never hidden but kept openly present, a nod to her origins as an image-maker in music and entertainment and an acknowledgment of their role in manufacturing Hollywood "movie magic." Light stops being a tool for making an image to be consumed and becomes a lived experience instead, one the audience encounters and documents itself inside of, as both consumer and creator.`,
+        imageUrl: '/img/recurrence.mp4',
+        posterUrl: '/img/recurrence.jpg',
+        gallery: [
+            { original: '/img/recurrence.mp4', type: 'video' },
+        ],
+        video: [{ original: 'https://www.youtube.com/embed/JbVkGY0t_nk', type: 'youtube' }],
+    },
+    {
         id: -6,
         title: 'FIELD',
         roleTitle: 'Creative Technologist/App Developer',
@@ -44,6 +86,7 @@ const projects = [
         ],
         video: [{ original: 'https://www.youtube.com/embed/pcHI5d5ZK7w', type: 'youtube' }],
     },
+
     {
         id: -4,
         title: 'Artifice: nodes:ii',
@@ -83,6 +126,51 @@ const projects = [
             { original: '/img/getOutta4.jpg', type: 'image' },
         ],
         // video: [{ original: '/img/getOuttaMyRoomLoopSCORE.mp4', type: 'video' }],
+    },
+    {
+        id: -8,
+        title: 'SENSORHEUM',
+        roleTitle: 'Creative Technologist/Lighting Designer',
+        techUsed: 'Lighting Design, TouchDesigner, Immersive Installation, Sound and Scent Environments',
+        links: [
+            { link: 'https://www.newmuseum.org/person/rena-anakwe/', text: 'NEW INC / New Museum' },
+            { link: 'https://www.aspaceforsound.com/', text: 'A Space for Sound' },
+            { link: 'https://www.demofestival.org/schedule/extended-realities-track-talks', text: 'DEMO Festival 2026' },
+        ],
+        description: 'A multi-dimensional healing portal by interdisciplinary artist, poet, and healer Rena Anakwe, connecting people to sound healing, plant-based remedies, and practitioners both in person and online.',
+        details: `SENSORHEUM is the ongoing project of Rena Anakwe, a Nigerian-Canadian-American interdisciplinary artist, poet, and healer whose practice moves between sound, visuals, and scent to trace where traditional healing practices, spirituality, and performance connect and fracture. Built during her time in the Extended Realities track of the New Museum's NEW INC incubator, SENSORHEUM offers access to healing experiences, practitioners, and tools, positioning itself as an alternative to Westernized systems that treat symptoms in isolation rather than the mind, body, and spirit together.
+        <br><br>
+        I work with Rena as a creative technologist and lighting designer, shaping the light and the systems that carry the in-person side of SENSORHEUM. The work asks light to do something closer to what her sound does, holding a room in a particular state and moving it slowly rather than announcing itself, which makes it a very different design problem than a stage cue stack.
+        <br><br>
+        Anakwe's practice has been supported by MacDowell, BAM, The Kitchen, Lincoln Center, and NYSCA/NYFA, and she is a 2025 Henry Hewes Design Award recipient for her sound design on Wole Soyinka's <i>The Swamp Dwellers</i> at Theatre for a New Audience.`,
+        imageUrl: '/img/sensorium.jpg',
+        gallery: [
+            { original: '/img/sensorium.mp4', type: 'video' },
+        ],
+    },
+    {
+        id: -7,
+        title: 'Remember, Gullah Island',
+        roleTitle: 'Score Composer',
+        techUsed: 'Ableton, Score Composition, Sound Design',
+        links: [
+            { link: 'https://www.mta.info/agency/arts-design/digital-art/gullah-island', text: 'MTA Arts & Design' },
+            { link: 'https://jazsalyn.com/', text: 'Jazsalyn' },
+            { link: 'https://www.mta.info/press-release/icymi-mta-arts-design-kicks-yearlong-celebration-marking-40-years-of-bringing-art', text: 'MTA Press Release' },
+        ],
+        description: 'A five-channel video game artwork by artist and researcher Jazsalyn, commissioned by MTA Arts & Design for the LED walls of the Grand Central Madison concourse, where ancestral spirits wander digital renders of the Gullah Geechee Corridor.',
+        details: `<i>Remember, Gullah Island</i> is an alternate-reality work by Jazsalyn, an artist and researcher whose practice moves through game engines, algorithmic processes, and video art to consider data loss, memory restoration, and Ancestral Intelligence. The piece travels the Gullah Geechee Corridor, the stretch of Atlantic coastal plain running from North Carolina to Florida that is a National Heritage Area of deep cultural significance to West and Central Africa and the diaspora, and fills it with ancestral spirits rendered in a game engine.
+        <br><br>
+        I composed the score for the work. Writing for a transit concourse is its own constraint: the audience is mid-commute, arriving at any point in the loop, and the music has to open the space rather than compete with it, so the score works in long tidal movements that let someone drop in at any moment and still land somewhere.
+        <br><br>
+        The piece launched on October 7, 2025 on the five-channel LED walls of the LIRR's Grand Central Madison terminal, each screen seventeen feet wide and over seven feet high, as part of MTA Arts & Design's yearlong celebration of forty years of public art. It ran every six minutes through March 2026, inviting commuters to pause and sit with stories of departure, arrival, resilience, and cultural perseverance.`,
+        imageUrl: '/img/gullah.jpg',
+        gallery: [
+            { original: '/img/gullah3.jpg', type: 'image' },
+            { original: '/img/gullah1.jpg', type: 'image' },
+            { original: '/img/gullah2.jpg', type: 'image' },
+            { original: '/img/gullah4.jpg', type: 'image' },
+        ],
     },
     {
         id: -2,
@@ -309,13 +397,28 @@ const discarded =  [
                 class="project-card"
                 data-project-id={project.id}
             >
-                <img 
-                    style="border-radius: 8px;"
-                    src={project.imageUrl} 
-                    alt={project.title} 
-                    class="project-image"
-                    data-project-trigger={project.id}
-                />
+                {/\.(mp4|webm|mov)$/i.test(project.imageUrl) ? (
+                    <video
+                        style="border-radius: 8px;"
+                        src={project.imageUrl}
+                        poster={project.posterUrl}
+                        class="project-image"
+                        data-project-trigger={project.id}
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        preload="metadata"
+                    />
+                ) : (
+                    <img 
+                        style="border-radius: 8px;"
+                        src={project.imageUrl} 
+                        alt={project.title} 
+                        class="project-image"
+                        data-project-trigger={project.id}
+                    />
+                )}
                 
                 <div class="project-text">
                     <h3 data-project-trigger={project.id}>{project.title}</h3>
@@ -422,9 +525,13 @@ const discarded =  [
         font-size: 1rem;
     }
 
+    /* Locked to the 3:2 the majority of the artwork is shot at, so every card's
+       media is the same height and the titles line up across the row. */
     .project-image {
         width: 100%;
-        height: auto;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        display: block;
         border-radius: 8px;
         margin-bottom: 15px;
     }
